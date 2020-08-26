@@ -15,3 +15,16 @@
   border: 2px solid #eee;
   border-radius: 3px;
 }
+
+.Nav__Link {
+  padding: 12px;
+  text-decoration: none;
+}
+
+.Nav__Link.active {
+  text-decoration: underline;
+}
+
+.Nav__Link:first-of-type {
+  padding: 0;
+}

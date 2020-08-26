@@ -21,7 +21,10 @@ function StockEventTable(props) {
         );
 
         return (
-          <div className='StockEventTable__ProductContainer'>
+          <div
+            className='StockEventTable__ProductContainer'
+            key={product.id.toString()}
+          >
             <StockDetail
               name={product.name}
               total={stockTotal}

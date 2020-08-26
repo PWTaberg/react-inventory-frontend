@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import StockEventTable from './components/StockEventTable';
-import AddStockEvent from './components/AddStockEvent';
-import AddProduct from './components/AddProduct';
-import Nav from './components/Nav';
-
 import './App.css';
+import StockEventTable from './components/StockEventTable';
 
 // Data types
 // Product
-/*
 const fetchedProducts = [
   {
     id: 1,
@@ -21,10 +15,9 @@ const fetchedProducts = [
     name: 'WW2 Normandy COD',
   },
 ];
-*/
 
 // StockEvents
-/*
+
 const fetchedStockEvents = [
   {
     id: 1,
@@ -57,7 +50,6 @@ const fetchedStockEvents = [
     product: fetchedProducts[1],
   },
 ];
-*/
 
 // Fetch all stock events
 // Separate by product
@@ -105,24 +97,10 @@ function App() {
   return (
     <div className='App'>
       <h1>Stock Inventory</h1>
-      <BrowserRouter>
-        <Nav />
-
-        <Switch>
-          <Route exact path='/products'>
-            <AddProduct />
-          </Route>
-          <Route exact path='/stock'>
-            <StockEventTable
-              products={fetchedProducts}
-              stockEvents={fetchedStockEvents}
-            />
-          </Route>
-          <Route exact path='/stock/add'>
-            <AddStockEvent products={fetchedProducts} />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+      <StockEventTable
+        products={fetchedProducts}
+        stockEvents={fetchedStockEvents}
+      />
     </div>
   );
 }
